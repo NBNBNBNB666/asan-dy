@@ -34,8 +34,7 @@ response = requests.post(url, headers=headers, data=json.dumps(payload))
   
 # 解析响应内容  
 response_data = json.loads(response.text)  
-# 假设响应数据中包含一个名为'choices'的列表，且每个选择都有一个'message'对象和一个'text'字段（这取决于实际的API响应结构）  
-# 这里需要根据实际的API响应来调整字段名  
+
 try:  
     response_text = response_data['choices'][0]['message']['content']  
 except (KeyError, IndexError, TypeError):  
